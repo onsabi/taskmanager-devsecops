@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: taskmanager
+  labels:
+    app: taskmanager
+spec:
+  # NodePort pour acceder a l'application depuis l'hote Minikube (minikube service taskmanager --url)
+  type: NodePort
+  selector:
+    app: taskmanager
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 30080
