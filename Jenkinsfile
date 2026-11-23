@@ -33,7 +33,7 @@ pipeline {
     environment {
         APP_NAME       = 'taskmanager'
         APP_VERSION    = '1.0.0'
-        DOCKERHUB_USER = 'ons-dev'          // A remplacer par votre identifiant Docker Hub
+        DOCKERHUB_USER = 'onsabi'          // A remplacer par votre identifiant Docker Hub
         IMAGE_NAME     = "${DOCKERHUB_USER}/${APP_NAME}"
         IMAGE_TAG      = "${APP_VERSION}-${BUILD_NUMBER}"
         FULL_IMAGE     = "${IMAGE_NAME}:${IMAGE_TAG}"

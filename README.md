@@ -83,8 +83,8 @@ curl -s localhost:8080/api/tasks
 ## 4. Conteneurisation
 
 ```bash
-docker build -t ons-dev/taskmanager:1.0.0 .
-docker run --rm -p 8080:8080 ons-dev/taskmanager:1.0.0
+docker build -t onsabi/taskmanager:1.0.0 .
+docker run --rm -p 8080:8080 onsabi/taskmanager:1.0.0
 curl -s localhost:8080/actuator/health/readiness
 ```
 
@@ -98,7 +98,7 @@ Choix du Dockerfile :
 
 ```bash
 minikube start --driver=docker
-minikube image load ons-dev/taskmanager:1.0.0      # ou utiliser l'image Docker Hub
+minikube image load onsabi/taskmanager:1.0.0      # ou utiliser l'image Docker Hub
 kubectl apply -f k8s/deployment.yaml -f k8s/service.yaml
 kubectl get pods -l app=taskmanager
 minikube service taskmanager --url
