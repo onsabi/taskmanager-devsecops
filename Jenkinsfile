@@ -203,7 +203,7 @@ pipeline {
         }
         cleanup {
             sh 'docker image rm ${FULL_IMAGE} || true'
-            cleanWs(deleteDirs: true, notFailIfNotExist: true)
+            cleanWs(deleteDirs: true)
         }
     }
 }
