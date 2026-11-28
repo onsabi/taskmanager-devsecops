@@ -65,17 +65,8 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
-                        sh 'mvn -B sonar:sonar -Dsonar.token=$SONAR_TOKEN'
+                        sh 'mvn -B sonar:sonar -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=true'
                     }
-                }
-            }
-        }
-
-        stage('Quality Gate') {
-            steps {
-                // Bloque le pipeline si le Quality Gate SonarQube echoue
-                timeout(time: 10, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
                 }
             }
         }
