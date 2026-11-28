@@ -24,7 +24,7 @@ spec:
         - name: taskmanager
           # Remplace par l'image publiee par Jenkins (sed dans le pipeline)
           image: DOCKER_IMAGE_PLACEHOLDER
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 8080
