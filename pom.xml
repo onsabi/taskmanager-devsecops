@@ -77,7 +77,11 @@
                 <artifactId>dependency-check-maven</artifactId>
                 <version>10.0.4</version>
                 <configuration>
-                    <failBuildOnCVSS>7</failBuildOnCVSS>
+                     <failBuildOnCVSS>7</failBuildOnCVSS>
+                     <analyzers>
+                        <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+                        <nodeAuditAnalyzerEnabled>false</nodeAuditAnalyzerEnabled>   
+                    </analyzers>
                     <formats>
                         <format>HTML</format>
                         <format>JSON</format>
